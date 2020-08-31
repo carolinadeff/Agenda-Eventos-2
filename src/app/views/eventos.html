@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/Style.css">
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <title>Minha agenda</title>
+</head>
+<body id="eventos">
+    <main>
+
+        <img src="/static/img/imagemDeFundo.jpg" id="fundo">
+        
+        <div class="area-formulario">
+            <div id="conteudo-todo-form">
+                <h2>Crie um Novo Evento:</h2>
+                <form id="formulario" action="/eventos/form/{{ idUsuario }}" method="post">
+
+
+                    <fieldset class="itens-form">
+                        {% if eventoSelecionado.id %}
+                            <input type="hidden" name="_method" value="PUT">
+                            <input type="hidden" id="idEvento" name="idEvento" value="{{ eventoSelecionado.id }}">
+                        {% endif %}
+
+                        <label for="evento">O que?</label>
+                        <input type="text" id="evento" name="evento" value="{{ eventoSelecionado.evento }}" required>
+
+                        <label for="dataEvento">Data</label>
+                        <input type="date" id="dataEvento" name="dataEvento" value="{{ eventoSelecionado.data }}" required>
+                    
+                        <label for="horaEvento">Horário</label>
+                        <input type="time" id="horaEvento" name="horaEvento" value="{{ eventoSelecionado.hora }}" required>
+            
+                        <label for="localEvento">Local</label>
+                        <input type="text" id="localEvento" name="localEvento" value="{{ eventoSelecionado.local }}" required>
+                    
+                        <label for="tipoEvento">Qual o tipo de Evento?</label>
+                        <select name="tipoEvento" id="tipoEvento">
+                            <option value="">Selecione o tipo de evento</option>
+                            {% for tipo in tiposDeEvento %}
+                                <option value="{{ tipo.valor }}" {{ "selected" if tipo.valor == eventoSelecionado.tipo }}>{{ tipo.texto }}</option>
+                            {% endfor %}
+                        </select>
+
+                        <label for="descricao">Observações</label>
+                        <textarea name="descricao" id="descricao" cols="30" rows="8">{{ eventoSelecionado.observacoes }}</textarea>    
+
+                        <div class="botoes">
+                            <button id="botaoOcultaForm" class="botao1">Fechar Edição</button>    
+                            <button class="botao2" type="submit">Salvar Evento</button>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <div id="botoes-edicao">
+            
+            <div class="sessao-filtrar">
+                <h4>Selecione os tipos de evento que deseja visualizar:</h4>
+                    {% for tipo in tiposDeEvento %}
+                        <div class="itens-filtro">
+                            <input class="filtro" type="checkbox" name="{{tipo.valor}}" id="{{tipo.valor}}" value="{{tipo.valor}}">
+                            <label class="rotulo-filtro" for="{{tipo.valor}}">{{tipo.texto}}</label>
+                        </div>
+                    {% endfor %}
+            </div>
+
+            <div class="botoes-limpaAgenda-ExibeForm">
+                <button class="botaoExibeForm">Criar Evento</button>
+                <button class="limparAgenda">Limpar Agenda</button>
+            </div>
+
+        </div>
+
+
+        <div class="area">
+
+            <div class="lista-eventos">
+                
+                <table>
+                    <caption>Meus Eventos</caption>
+                        <tbody>
+                            <tr class="titulo">
+                                <th>Evento</th>
+                                <th>Data e hora</th>
+                                <th>Local</th>
+                            </tr>
+                        </tbody>
+                </table>
+                
+                {% if eventos.length>0 %}
+                <div class="conteudo-tabela">
+                    <table>
+                        <tbody>
+                            {% for evento in eventos %}
+                                <tr class="{{ evento.tipo }}">
+                                    <td class="{{ loop.index }}">{{ evento.evento }}</td>
+                                    <td class="{{ loop.index }}">{{ evento.data }}</td>
+                                    <td class="{{ loop.index }}">{{ evento.local }}</td>
+                                    <td> <a href="/eventos/form/edita/{{idUsuario}}/{{evento.id}}"><img src="/static/img/edit.svg" alt="Editar"></a> <a href="/eventos/form/apaga/{{idUsuario}}/{{evento.id}}"><img src="/static/img/bin.svg" alt="Deletar"></a> </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                {% endif%}
+            
+            </div>
+
+            <div class="lista-observacoes">
+                <h3 class="observacoes-titulo">Observacoes</h3>
+                
+                <div class="observacoes">
+                    {% for evento in eventos %}
+                    <p class="{{ loop.index }} invisivel">{{ evento.observacoes }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            
+        </div>
+    
+    </main>
+    
+    <script src="/static/js/abreFechaForm.js"></script>
+    <script src="/static/js/exibeObservacoes.js"></script>
+    <script src="/static/js/filtraEventos.js"></script>
+    <script src="/static/js/exibeEventosPassados.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/Style.css">
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <title>Meus Eventos</title>
+</head>
+<body>
+
+    <header>
+        <div>
+            <h2>Um Agendador de Eventos da Internet</h2> 
+        </div>
+    </header>
+    <main>
+        <img src="/static/img/imagemDeFundo.jpg" id="fundo">
+        <div class="area-login">
+            <form action="/novoUsuario" method="POST">
+                <fieldset class="itens-form">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome">
+                    <label for="email">Email:</label>
+                    <input type="text" name="email">
+                    <label for="senha">Senha: <small>(Deve conter 4 números)</small></label>
+                    <input type="text" name="senha">
+                </fieldset>
+                    <button type="submit" class="botao">Criar Usuário</button>
+            </form>
+
+            <h4>{{ mensagem }}</h4>
+
+            <a href="/">Voltar</a>
+
+        </div>
+        
+    </main>
+    <footer>
+        <h4>Desenvolvido por Carolina Defferrari</h4>
+    </footer>
+
+</body>
+
+</html>

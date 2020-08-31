@@ -1,0 +1,31 @@
+{
+  "name": "agenda-eventos",
+  "version": "1.0.0",
+  "description": "Agenda enxuta para gerenciar eventos",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Agenda-Eventos"
+  },
+  "author": "Carolina Defferrari",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-session": "1.15.6",
+    "express-validator": "5.3.1",
+    "method-override": "^3.0.0",
+    "nunjucks": "^3.2.2",
+    "passport": "0.4.0",
+    "passport-local": "1.0.0",
+    "sqlite3": "^5.0.0",
+    "uuid": "3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
