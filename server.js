@@ -9,7 +9,8 @@ const {
     paginaCriacaoUsuario,
     criacaoUsuario,
     paginaLogin,
-    efetuaLogin
+    efetuaLogin,
+    efetuaLogout
 } = require('./src/app/controllers/BaseController')
 
 const {
@@ -74,7 +75,9 @@ app.route('/novoUsuario')
 
 app.route('/login')
     .get(paginaLogin)
-    .post(efetuaLogin())
+    .post(efetuaLogin)
+
+app.get('/logout', efetuaLogout)
 
 
 // somente autenticado:

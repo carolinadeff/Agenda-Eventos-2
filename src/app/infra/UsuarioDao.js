@@ -67,6 +67,23 @@ class UsuarioDao {
         });
     }
 
+    buscaNome(id) {
+        return new Promise((resolve, reject) => {
+            this._db.all(
+                `
+                    SELECT nome
+                    FROM usuarios
+                    WHERE ID = ?
+                `,[id],
+                (erro, nome) => {
+                    if (erro) {
+                        return reject('houve algum problema!');
+                    }
+                    return resolve(nome);
+                }
+            )
+        });
+    }
 
 
 }

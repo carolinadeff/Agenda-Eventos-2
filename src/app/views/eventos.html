@@ -11,6 +11,8 @@
     <main>
 
         <img src="/static/img/imagemDeFundo.jpg" id="fundo">
+
+        <div class="boas-vindas">Bem-vindo(a) {{nomeUsuario}}, hoje é {{hoje}}</div>
         
         <div class="area-formulario">
             <div id="conteudo-todo-form">
@@ -59,19 +61,23 @@
 
         <div id="botoes-edicao">
             
-            <div class="sessao-filtrar">
+            <div class="secao-filtrar">
                 <h4>Selecione os tipos de evento que deseja visualizar:</h4>
-                    {% for tipo in tiposDeEvento %}
-                        <div class="itens-filtro">
-                            <input class="filtro" type="checkbox" name="{{tipo.valor}}" id="{{tipo.valor}}" value="{{tipo.valor}}">
-                            <label class="rotulo-filtro" for="{{tipo.valor}}">{{tipo.texto}}</label>
-                        </div>
-                    {% endfor %}
+                {% for tipo in tiposDeEvento %}
+                    <div class="secao-filtrar">
+                        <input class="filtro" type="checkbox" name="{{tipo.valor}}" id="{{tipo.valor}}" value="{{tipo.valor}}">
+                        <label class="rotulo-filtro" for="{{tipo.valor}}">{{tipo.texto}}</label>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="secao-eventos-passados">
+                <input type="checkbox" class="filtro-passados" name="eventos-passados" id="eventos-passados" value="passado">
+                <label for="eventos-passados">Exibir Eventos Passados</label>
             </div>
 
             <div class="botoes-limpaAgenda-ExibeForm">
                 <button class="botaoExibeForm">Criar Evento</button>
-                <button class="limparAgenda">Limpar Agenda</button>
             </div>
 
         </div>
@@ -99,7 +105,7 @@
                             {% for evento in eventos %}
                                 <tr class="{{ evento.tipo }}">
                                     <td class="{{ loop.index }}">{{ evento.evento }}</td>
-                                    <td class="{{ loop.index }}">{{ evento.data }}</td>
+                                    <td class="{{ loop.index }} celula-data">{{ evento.data }}</td>
                                     <td class="{{ loop.index }}">{{ evento.local }}</td>
                                     <td> <a href="/eventos/form/edita/{{idUsuario}}/{{evento.id}}"><img src="/static/img/edit.svg" alt="Editar"></a> <a href="/eventos/form/apaga/{{idUsuario}}/{{evento.id}}"><img src="/static/img/bin.svg" alt="Deletar"></a> </td>
                                 </tr>
@@ -121,14 +127,16 @@
                     {% endfor %}
                 </div>
             </div>
-            
+
+            <a href="/logout" id="botao-sair">Sair</a>
         </div>
+
+        
     
     </main>
     
     <script src="/static/js/abreFechaForm.js"></script>
     <script src="/static/js/exibeObservacoes.js"></script>
     <script src="/static/js/filtraEventos.js"></script>
-    <script src="/static/js/exibeEventosPassados.js"></script>
 </body>
 </html>

@@ -13,10 +13,12 @@
         <div>
             <h2>Um Agendador de Eventos da Internet</h2> 
         </div>
+        <div class="data-de-hoje">{{hoje}}</div>
     </header>
     <main>
         <img src="/static/img/imagemDeFundo.jpg" id="fundo">
         <div class="area-login">
+            <h3>Login - Insira seus dados:</h3>
             <form action="/login" method="POST">
                 <fieldset class="itens-form">
                     <label for="email">Email:</label>
@@ -26,6 +28,9 @@
                 </fieldset>
                     <button type="submit" class="botao">Entrar</button>
             </form>
+
+            <h4>{{ info.mensagem }}</h4>
+
             <a href="/">Voltar</a>
         </div>
         
