@@ -1,44 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/Style.css">
-    <link rel="stylesheet" href="/static/css/reset.css">
-    <title>Meus Eventos</title>
-</head>
-<body>
+{% extends "layoutInicio.html" %}
 
-    <header>
-        <div>
-            <h2>Um Agendador de Eventos da Internet</h2> 
-        </div>
-        <div class="data-de-hoje">{{hoje}}</div>
-    </header>
-    <main>
-        <img src="/static/img/imagemDeFundo.jpg" id="fundo">
-        <div class="area-login">
-            <h3>Login - Insira seus dados:</h3>
-            <form action="/login" method="POST">
-                <fieldset class="itens-form">
-                    <label for="email">Email:</label>
-                    <input type="text" name="email">
-                    <label for="senha">Senha:</label>
-                    <input type="text" name="senha">
-                </fieldset>
-                    <button type="submit" class="botao">Entrar</button>
-            </form>
+{% block content %}
 
-            <h4>{{ info.mensagem }}</h4>
+    <h3>Login - Insira seus dados:</h3>
+    <form action="/login" method="POST">
+        <fieldset class="itens-form">
+            <label for="email">Email:</label>
+            <input type="text" name="email">
+            <label for="senha">Senha:</label>
+            <input type="text" name="senha">
+        </fieldset>
+            <button type="submit" class="botao">ENTRAR</button>
+    </form>
 
-            <a href="/">Voltar</a>
-        </div>
+    <h4>{{ info.mensagem }}</h4>
+
+    <a href="/" class="botao">VOLTAR</a>
+
+{% endblock content %}
         
-    </main>
-    <footer>
-        <h4>Desenvolvido por Carolina Defferrari</h4>
-    </footer>
-
-</body>
-
-</html>

@@ -1,0 +1,151 @@
+:root {
+    --fundo: #FAF6E8;
+    --fundo-translucido: rgba(250, 246, 232, 0.6);
+    --texto: #845B4A;
+    --botoes: #AFAABF;
+    --botoes-hover:#887DAD;
+    --texto-hover: #EBE3C9;
+    font-size: 0.9em;
+
+    font-family: 'Arimo', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--texto);
+}
+
+/* img fundo */
+#fundo {
+    width: auto;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0;
+}
+
+header {
+    align-self: stretch;
+    height: 50vh;
+    text-align: center;
+    background-color: var(--fundo-translucido);
+    
+}
+
+header div {
+    margin-top: 50px;
+}
+
+header h2 {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+footer {
+    align-self: stretch;
+    height: 10vh;
+    background-color: var(--fundo-translucido);
+
+    text-align: right;
+}
+
+footer h4, footer h6 {
+    margin: 1em 1em 0 0;
+    font-size: 0.8em;
+}
+
+.container-area-login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+}
+
+.area-login {
+    border-radius:  15px;
+    background-color: var(--fundo);
+    box-shadow: 0 0 15px 5px rgba(100, 100, 100, 0.2);
+    padding: 3em 4em;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 20vw;
+    justify-content: space-between;
+    align-items: stretch;
+    text-align: center;
+    font-size: .9em;
+}
+
+.area-login h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1em;
+}
+
+.itens-form{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.itens-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.itens-form label {
+    margin: 0.6em 0;
+    text-align: left;
+    color: var(--texto);
+    font-size: 0.9rem;
+}
+
+.itens-form input {
+    margin: 0 0 1.4em;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 6px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 0 8px 3px rgba(150, 150, 150, 0.1);
+}
+
+.botao {
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    background-color: var(--botoes);
+    border-radius: 5px;
+    margin-top: 1rem;
+    text-decoration: none;
+    box-shadow: 0 0 15px 5px rgba(100, 100, 100, 0.1);
+    text-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.9);
+    color: var(--texto);
+    font-weight: 700;
+    transition: 0.3s;
+    border: none;
+    box-sizing: border-box;
+}
+
+a.botao {
+    margin-top: 3rem;
+}
+
+.botao:hover {
+    color: var(--texto-hover);
+    background-color: var(--botoes-hover);
+
+}

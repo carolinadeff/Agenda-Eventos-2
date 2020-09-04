@@ -1,36 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/Style.css">
-    <link rel="stylesheet" href="/static/css/reset.css">
-    <title>Meus Eventos</title>
-</head>
-<body>
 
-    <header>
-        <div>
-            <h2>Um Agendador de Eventos da Internet</h2> 
-        </div>
-        <div class="data-de-hoje">{{hoje}}</div>
-    </header>
-    <main>
-        <img src="/static/img/imagemDeFundo.jpg" id="fundo">
-        <div class="area-login">
-                <div class="botoesInicio">
-                    <a class="botao" href="/login">Fazer Login</a>
-                    <a class="botao" href="/novoUsuario">Criar um Novo Usuário</a>
-                </div>
-            </form>
-        </div>
+{% extends "layoutInicio.html" %}
+
+{% block content %}
+
+    <h3>Uma agenda simples e enxuta para gerenciar seus eventos.</h4>
+    <div class="separador"></div>
+    <a class="botao" href="/login">FAZER LOGIN</a>
+    <a class="botao" href="/novoUsuario">CRIAR USUÁRIO</a>
+
+{% endblock content%}
         
-    </main>
-    <footer>
-        <h4>Desenvolvido por Carolina Defferrari</h4>
-        <h6> Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></h6>
-    </footer>
-
-</body>
-
-</html>
+        

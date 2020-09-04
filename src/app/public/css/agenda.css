@@ -1,0 +1,358 @@
+:root {
+    --fundo: #FAF6E8;
+    --fundo-translucido: rgba(250, 246, 232, 0.6);
+    --texto: #845B4A;
+    --botoes: #AFAABF;
+    --botoes-hover:#887DAD;
+    --texto-hover: #EBE3C9;
+
+    font-family: 'Arimo', sans-serif;
+}
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--texto);
+}
+
+#fundo {
+    width: auto;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0;
+}
+
+/*Página principal*/
+
+.area-formulario {
+    height: 100vh;
+    width: auto;
+    background: var(--fundo);
+    padding: 0 1.5rem;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    box-shadow: 0 10px 15px rgba(50,50,50, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+#conteudo-todo-form {
+    padding: 0 1.5rem;
+}
+
+
+.area-formulario h2 {
+    margin: 0 0 2rem 1rem;
+    font-size: 1rem;
+}
+
+.itens-form{
+    display: flex;
+    flex-direction: column;
+    width: 17rem;
+    height: auto;
+    font-size: 0.9rem;
+}
+
+.itens-form label {
+    text-align: left;
+    box-sizing: border-box;
+    margin-top: 1rem;
+}
+
+.itens-form input, textarea, select {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 6px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 0 8px 3px rgba(150, 150, 150, 0.2);
+    box-sizing: border-box;
+}
+
+
+.botoes {
+    margin-top: 2rem;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+
+}
+
+.botao {
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    background-color: var(--botoes);
+    border-radius: 5px;
+    margin-top: 1rem;
+    text-decoration: none;
+    box-shadow: 0 0 15px 5px rgba(100, 100, 100, 0.1);
+    text-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.9);
+    color: var(--texto);
+    font-weight: 700;
+    transition: 0.3s;
+    border: none;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+}
+
+.botao:hover {
+    color: var(--texto-hover);
+    background-color: var(--botoes-hover);
+
+}
+
+.botao1 {
+    border-radius: 5px 0 0 5px;
+    width: 30%;
+    
+}
+
+.botao2 {
+    border-radius: 0 5px 5px 0 ;
+    width: 69%;
+}
+
+.invisivel{
+    display: none;
+}
+
+.linhaInvisivel {
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+
+/*Tabela eventos*/
+
+.area {
+    position: absolute;
+    left: 0;
+    top: 10vh;
+    bottom: 10vh;
+    right: 20vh;
+    padding: 2.5rem;
+    padding-right: 0rem;
+    border-radius: 0 15px 15px 0;
+    background-color: var(--fundo-translucido);
+    box-shadow: 0 0 15px 5px rgba(100, 100, 100, 0.2);
+    display: flex;
+    justify-content: flex-start
+}
+
+
+
+/* area de edição */
+
+.area-filtros {
+    padding: 2rem 4rem 0 4rem ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 15rem;
+    font-size: 0.9rem;
+}
+
+.secao-filtrar h4 {
+    font-size: 1rem;
+    margin-bottom: 1.3rem;
+}
+
+.itens-secao-filtrar {
+    margin-bottom: 0.6rem;
+}
+
+.itens-secao-filtrar input {
+    margin-right: 0.5rem;
+}
+
+/* tabela */ 
+
+.lista-eventos {
+    background-color: var(--fundo);
+    max-width: 60vw;
+    border-radius: 6px;
+    padding: 50px 30px 30px;
+    align-self: stretch;
+    box-shadow: 0 0 8px 3px rgba(150, 150, 150, 0.2);
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+table caption {
+    font-size: 1.3em;
+    margin: 0 0 1.5em;
+    width: 100%;
+    text-align: left;
+}
+
+.titulo {
+    width: 80% !important;
+    margin: 0 0 1rem 2rem;
+}
+
+
+tr th {
+    width: 32%;
+    text-align: center;
+    margin: 0.6em 1em;
+}
+
+.conteudo-tabela {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow-y: scroll;
+}
+
+.conteudo-tabela tr {
+    width: 95%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: 0.6em 0.1em;
+    padding: 0.4em;
+    height: 1.2rem;
+
+}
+
+
+.conteudo-tabela tr td {
+    font-size: 0.8rem;
+    width: 32%;
+    text-align: left;
+    padding: 0.5rem 0 0;
+    height: 100%;
+    overflow: visible;
+    overflow-wrap: break-word;
+    padding-top: 3px;
+}
+
+.conteudo-tabela tr td:nth-child(2){
+    width: 40%;
+}
+
+.conteudo-tabela tr td:nth-child(4), .conteudo-tabela tr td:nth-child(5){
+    width: 5%;
+}
+
+.conteudo-tabela td img {
+    height: 80%;
+    margin: 3px 0 5px 0;
+
+}
+
+
+.conteudo-tabela::-webkit-scrollbar{
+    width: 10px;
+}
+
+.conteudo-tabela::-webkit-scrollbar-track {
+    display: none;
+}
+
+.conteudo-tabela::-webkit-scrollbar-button {
+    display: none;
+}
+
+.conteudo-tabela::-webkit-scrollbar-thumb {
+    background-color: #845b4a;
+    border-radius: 5px;
+}
+
+.lista-observacoes {
+    background-color: var(--fundo);
+    max-width: 12rem;
+    height: fit-content;
+    border-radius: 6px;
+    padding: 2rem;
+    margin-top: 80px;
+    align-self: stretch;
+    flex-grow: 1;
+    position: relative;
+    right: -2rem;
+    box-shadow: 0 0 8px 3px rgba(150, 150, 150, 0.2);
+}
+
+.observacoes {
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+/*Classes dos tipos de eventos*/
+
+.saude, .boleto {
+    background: rgb(200, 238, 167);
+    border-radius: 6px;
+}
+
+.saude:before {
+    content: "\1F966";
+    margin-right: 10px;
+}
+
+.boleto:before {
+    content: "\1F4B8";
+    margin-right: 10px;
+}
+
+.trabalho, .estudo {
+    background: rgb(231, 231, 231);
+    border-radius: 6px;
+}
+
+.trabalho:before {
+    content: "\1F4BB";
+    margin-right: 10px;
+}
+
+.estudo:before {
+    content: "\1F393";
+    margin-right: 10px;
+}
+
+.lazer, .viagem {
+    background: rgb(245, 210, 156);
+    border-radius: 6px;
+}
+
+.lazer:before {
+    content: "\1FA81";
+    margin-right: 10px;
+}
+
+.viagem:before {
+    content: "\1F5FA";
+    margin-right: 10px;
+}
+
+.selecao {
+    width: fit-content;
+    margin: 5px;
+}
+
+.evento-passado {
+    background: lightgray;
+    opacity: 0.4;
+}
+
+

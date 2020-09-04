@@ -1,47 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/Style.css">
-    <link rel="stylesheet" href="/static/css/reset.css">
-    <title>Meus Eventos</title>
-</head>
-<body>
 
-    <header>
-        <div>
-            <h2>Um Agendador de Eventos da Internet</h2> 
-        </div>
-        <div class="data-de-hoje">{{hoje}}</div>
-    </header>
-    <main>
-        <img src="/static/img/imagemDeFundo.jpg" id="fundo">
-        <div class="area-login">
-             <h3>Cadastro de novo usuário:</h3>
-            <form action="/novoUsuario" method="POST">
-                <fieldset class="itens-form">
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome">
-                    <label for="email">Email:</label>
-                    <input type="text" name="email">
-                    <label for="senha">Senha: <small>(Deve conter 4 números)</small></label>
-                    <input type="text" name="senha">
-                </fieldset>
-                    <button type="submit" class="botao">Criar Usuário</button>
-            </form>
+{% extends "layoutInicio.html" %}
 
-            <h4>{{ mensagem }}</h4>
+{% block content %}
+            
+    <h3>Cadastro de novo usuário:</h3>
+    <form action="/novoUsuario" method="POST">
+        <fieldset class="itens-form">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome">
+            <label for="email">Email:</label>
+            <input type="text" name="email">
+            <label for="senha">Senha: <small>(Deve conter 4 números)</small></label>
+            <input type="text" name="senha">
+        </fieldset>
+        <button type="submit" class="botao">CRIAR USUÁRIO</button>
+    </form>
 
-            <a href="/">Voltar</a>
+    <h4>{{ mensagem }}</h4>
 
-        </div>
-        
-    </main>
-    <footer>
-        <h4>Desenvolvido por Carolina Defferrari</h4>
-    </footer>
+    <a href="/" class="botao">VOLTAR</a>
 
-</body>
-
-</html>
+{% endblock content %}
