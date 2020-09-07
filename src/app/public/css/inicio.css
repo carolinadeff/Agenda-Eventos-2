@@ -35,7 +35,6 @@ header {
     height: 50vh;
     text-align: center;
     background-color: var(--fundo-translucido);
-    
 }
 
 header div {
@@ -57,7 +56,7 @@ footer {
 
 footer h4, footer h6 {
     margin: 1em 1em 0 0;
-    font-size: 0.8em;
+    font-size: 0.9rem;
 }
 
 .container-area-login {
@@ -82,15 +81,24 @@ footer h4, footer h6 {
     flex-direction: column;
     height: auto;
     width: 20vw;
+    min-width: 300px;
+    box-sizing: border-box;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: center;
     text-align: center;
     font-size: .9em;
 }
 
+form {
+    align-self: stretch;
+}
+
 .area-login h3 {
     font-size: 1.1rem;
-    margin-bottom: 1em;
+}
+
+.area-login h4 {
+    margin: 1rem 0 1rem;
 }
 
 .itens-form{
@@ -123,6 +131,14 @@ footer h4, footer h6 {
     box-shadow: 0 0 8px 3px rgba(150, 150, 150, 0.1);
 }
 
+.separador {
+    background-color: var(--texto);
+    width: 5rem;
+    height: 0.2rem;
+    border-radius: 0.2rem;
+    margin-top: 3rem;
+}
+
 .botao {
     padding: 15px;
     text-align: center;
@@ -147,5 +163,14 @@ a.botao {
 .botao:hover {
     color: var(--texto-hover);
     background-color: var(--botoes-hover);
+
+}
+
+
+@media (max-width: 700px) {
+    :root {
+        font-size: 0.75em;
+    }
+
 
 }

@@ -6,17 +6,18 @@
     <h3>Cadastro de novo usuário:</h3>
     <form action="/novoUsuario" method="POST">
         <fieldset class="itens-form">
-            <label for="nome">Nome:</label>
+            <label for="nome">Nome <small>(Somente letras)</small> :</label>
             <input type="text" name="nome">
-            <label for="email">Email:</label>
+            <label for="email">Email <small>(Formato válido):</small></label>
             <input type="text" name="email">
-            <label for="senha">Senha: <small>(Deve conter 4 números)</small></label>
+            <label for="senha">Senha: <small>(4 números)</small></label>
             <input type="text" name="senha">
         </fieldset>
+        <h4>{{ mensagem }}</h4>
         <button type="submit" class="botao">CRIAR USUÁRIO</button>
     </form>
 
-    <h4>{{ mensagem }}</h4>
+    <div class="separador"></div>
 
     <a href="/" class="botao">VOLTAR</a>
 

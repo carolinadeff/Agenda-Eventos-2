@@ -9,3 +9,14 @@ document.querySelector('.conteudo-tabela').addEventListener('click', (e) => {
         })
     }
 })
+
+const quadrObs = document.querySelector('.lista-observacoes');
+
+document.addEventListener("click", (e) => {
+    if (e.target.nodeName == 'TR' || e.target.nodeName == 'TD') {
+        quadrObs.classList.remove('lista-observacoes-visivel')
+    } else {
+        quadrObs.classList.add('lista-observacoes-visivel')
+    }
+
+})

@@ -7,6 +7,7 @@
     --texto-hover: #EBE3C9;
 
     font-family: 'Arimo', sans-serif;
+    font-size: 90%;
 }
 
 
@@ -18,6 +19,27 @@ body {
     align-items: center;
     justify-content: space-between;
     color: var(--texto);
+}
+
+header {
+    align-self: stretch;
+    height: 7vh;
+    text-align: center;
+    background-color: var(--fundo-translucido);
+}
+
+header div {
+    margin: 4vh 0 0;
+    font-weight: 700;
+}
+
+#botao-sair {
+    position: absolute;
+    right: 8vw;
+    top: 0;
+    margin: 0;
+    border-radius: 0 0 5px 5px;
+    width: 5rem;
 }
 
 #fundo {
@@ -78,7 +100,7 @@ body {
     padding: 6px;
     border: none;
     border-radius: 3px;
-    box-shadow: 0 0 8px 3px rgba(150, 150, 150, 0.2);
+    box-shadow: 0 0 8px 3px rgba(100, 100, 100, 0.1);
     box-sizing: border-box;
 }
 
@@ -147,7 +169,7 @@ body {
     left: 0;
     top: 10vh;
     bottom: 10vh;
-    right: 20vh;
+    right: 8vw;
     padding: 2.5rem;
     padding-right: 0rem;
     border-radius: 0 15px 15px 0;
@@ -165,9 +187,10 @@ body {
     padding: 2rem 4rem 0 4rem ;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 15rem;
     font-size: 0.9rem;
+    position: relative;
 }
 
 .secao-filtrar h4 {
@@ -183,11 +206,19 @@ body {
     margin-right: 0.5rem;
 }
 
+.separador {
+    background-color: var(--texto);
+    width: 5rem;
+    height: 0.2rem;
+    border-radius: 0.2rem;
+    margin: 3rem;
+    align-self: center;
+}
+
 /* tabela */ 
 
 .lista-eventos {
     background-color: var(--fundo);
-    max-width: 60vw;
     border-radius: 6px;
     padding: 50px 30px 30px;
     align-self: stretch;
@@ -196,6 +227,11 @@ body {
     flex-grow: 1;
     flex-direction: column;
     align-items: stretch;
+    box-sizing: border-box;
+}
+
+table {
+    box-sizing: border-box;
 }
 
 table caption {
@@ -230,9 +266,8 @@ tr th {
     align-items: flex-end;
     justify-content: space-between;
     margin: 0.6em 0.1em;
-    padding: 0.4em;
+    padding: 0.8rem 0 0.2rem;
     height: 1.2rem;
-
 }
 
 
@@ -240,25 +275,24 @@ tr th {
     font-size: 0.8rem;
     width: 32%;
     text-align: left;
-    padding: 0.5rem 0 0;
     height: 100%;
     overflow: visible;
-    overflow-wrap: break-word;
+    overflow-wrap: normal;
     padding-top: 3px;
+    margin-right: 1rem;
 }
 
 .conteudo-tabela tr td:nth-child(2){
     width: 40%;
 }
 
-.conteudo-tabela tr td:nth-child(4), .conteudo-tabela tr td:nth-child(5){
+.conteudo-tabela tr td:nth-child(4), .conteudo-tabela tr td:nth-child(5) {
     width: 5%;
+    margin-right: 0;
 }
 
 .conteudo-tabela td img {
     height: 80%;
-    margin: 3px 0 5px 0;
-
 }
 
 
@@ -289,8 +323,12 @@ tr th {
     align-self: stretch;
     flex-grow: 1;
     position: relative;
-    right: -2rem;
+    right: -50px;
     box-shadow: 0 0 8px 3px rgba(150, 150, 150, 0.2);
+}
+
+.lista-observacoes-visivel {
+    display: block;
 }
 
 .observacoes {
@@ -307,12 +345,12 @@ tr th {
 
 .saude:before {
     content: "\1F966";
-    margin-right: 10px;
+    margin: 0.5rem;
 }
 
 .boleto:before {
     content: "\1F4B8";
-    margin-right: 10px;
+    margin: 0.5rem;
 }
 
 .trabalho, .estudo {
@@ -322,12 +360,12 @@ tr th {
 
 .trabalho:before {
     content: "\1F4BB";
-    margin-right: 10px;
+    margin: 0.5rem;
 }
 
 .estudo:before {
     content: "\1F393";
-    margin-right: 10px;
+    margin: 0.5rem;
 }
 
 .lazer, .viagem {
@@ -337,12 +375,12 @@ tr th {
 
 .lazer:before {
     content: "\1FA81";
-    margin-right: 10px;
+    margin: 0.5rem;
 }
 
 .viagem:before {
     content: "\1F5FA";
-    margin-right: 10px;
+    margin: 0.5rem;
 }
 
 .selecao {
@@ -355,4 +393,63 @@ tr th {
     opacity: 0.4;
 }
 
+@media (max-width: 900px) {
+    :root {
+        font-size: 75%;
+    }
 
+    header div {
+        margin: 3vh 30vw 0 15vw;
+    }
+
+    .area{
+        flex-direction: column;
+        bottom: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        box-sizing: border-box;
+    }
+
+    .area-formulario {
+        border-radius: 0 0 8px 0;
+    }
+
+    .area-filtros {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 2rem 4rem 4rem 6rem;
+    }
+    
+    .lista-eventos {
+        width: 100vw;
+        box-sizing: border-box;
+        border-radius: 0;
+        flex-grow: 1;
+        padding: 50px 20px 20px 40px;
+
+    }
+
+    .conteudo-tabela {
+        overflow-y: visible ;
+        
+    }
+
+    .lista-observacoes {
+        margin: 0;
+        position: absolute;
+        right: 0;
+        top: 52vh;
+        z-index: 2;
+    }
+
+    .lista-observacoes-visivel {
+        display: none;
+    }
+
+    .conteudo-tabela tr {
+        width: 100%;
+        margin-right: 0;
+    }
+
+}

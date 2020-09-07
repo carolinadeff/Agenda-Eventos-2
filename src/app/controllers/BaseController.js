@@ -8,9 +8,9 @@ const { hoje } = require('../utils/format');
 
 function validacoes(){
     return [
-        check('nome').isAlpha().withMessage('Somente letras'),
-        check('email').isEmail().withMessage('Forneça um email'),
-        check('senha').isLength({min: 4, max: 4}).withMessage('A senha deve conter 4 caracteres')
+        check('nome').isAlpha().withMessage('O nome der conter somente letras.'),
+        check('email').isEmail().withMessage('Forneça um email válido.'),
+        check('senha').isLength({min: 4, max: 4}).withMessage('A senha deve conter 4 números.')
         ]
 }
 
@@ -26,7 +26,7 @@ function paginaCriacaoUsuario(req, res) {
 
 function criacaoUsuario(req, res) {
     const erros = validationResult(req)
-    const msgErro = erros.array().map(erro => erro.msg).join(', ')
+    const msgErro = erros.array().map(erro => erro.msg).join(' ')
 
     if(!erros.isEmpty()) {
         return res.render('novoUsuario.html', {mensagem: msgErro, hoje })

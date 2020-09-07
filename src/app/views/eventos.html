@@ -57,7 +57,7 @@
                         <textarea name="descricao" id="descricao" cols="30" rows="8">{{ eventoSelecionado.observacoes }}</textarea>    
 
                         <div class="botoes">
-                            <button id="botaoOcultaForm" class="botao botao1">FECHAR</button>    
+                            <button id="botao-oculta-form" class="botao botao1">FECHAR</button>    
                             <button class="botao botao2" type="submit">SALVAR</button>
                         </div>
 
@@ -84,8 +84,9 @@
                     <input type="checkbox" class="filtro-passados" name="eventos-passados" id="eventos-passados" value="passado">
                     <label for="eventos-passados">Exibir Eventos Passados</label>
                 </div>
+                <div class="separador"></div>
 
-                <button class="botao">Criar Evento</button>
+                <button id="botao-exibe-form" class="botao">Criar Evento</button>
             </div>
 
             <div class="lista-eventos">
@@ -122,7 +123,7 @@
             
             </div>
 
-            <div class="lista-observacoes">
+            <div class="lista-observacoes lista-observacoes-visivel">
                 <h3 class="observacoes-titulo">Observacoes</h3>
                 
                 <div class="observacoes">

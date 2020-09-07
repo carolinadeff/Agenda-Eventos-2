@@ -1,6 +1,6 @@
 
-document.querySelector('#botaoOcultaForm').onclick = escondeForm
-document.querySelector('.botaoExibeForm').onclick = exibeForm
+document.querySelector('#botao-oculta-form').onclick = escondeForm
+document.querySelector('#botao-exibe-form').onclick = exibeForm
 
 function escondeForm(event){
     event.preventDefault();
