@@ -8,7 +8,7 @@ Essa aplicação foi um projetinho meu, para exercita conceitos e ferramentas ap
 No back-end usei o Express para criar o servidor e as rotas e o passport junto para fazer autenticação. para persistir eventos e usuários, mysql.
 A entrada da aplicação tem a opção de criar o usuario ou fazer login.
 
-(https://github.com/carolinadeff/Agenda-Eventos-2/blob/master/inicial.png)
+(./inicial.png)
 
 Ao realizar login o usuário é direciopnado à agenda, onde cria, edita e visualiza os eventos, com filtros de categoria e de visualização de eventos passados.
 
