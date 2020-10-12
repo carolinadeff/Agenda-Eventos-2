@@ -4,10 +4,9 @@ Agenda enxuta para gerenciar eventos!
 Acesse a aplicação:
 https://cryptic-brushlands-93366.herokuapp.com/
 
-Essa aplicação foi um projetinho meu, para exercitar conceitos e ferramentas aprendidos nos cursos da Alura da formação de Note, e de front-end.
-É uma agenda para salvar e vizualizar eventos e lembretes, divididos em categorias estáticas (ponto a melhorar, o usuário deve poder criar suas categorias). Cada categoria tem um layout e os eventos podem ser filtrados por categoria. Eventos novos são criados na aba lateral esquerda e cada evento pode ser deletado ou editado. No front-end usei html, css puros para criar os layouts, e javascript quase puro, com o nunjucks, para renderizar os dados e alternar entre as views.
-No back-end usei o Express para criar o servidor e as rotas e o passport junto para fazer autenticação. para persistir eventos e usuários, mysql.
-A entrada da aplicação tem a opção de criar o usuario ou fazer login.
+A aplicação utiliza uma estrutura MVC simples, com back e front-end integrados; as views são enviadas pelas próprias rotas.
+É uma agenda para salvar e vizualizar eventos e lembretes, divididos em categorias estáticas (ponto a melhorar, o usuário deve poder criar suas categorias). Cada categoria tem um layout e os eventos podem ser filtrados por categoria. Eventos novos são criados na aba lateral esquerda e cada evento pode ser deletado ou editado. No front-end utilizei html e css puros para criar os layouts, sem frameworks, como um exercício, e javascript com auxílio de um template engine, o nunjucks, para inserir os dados e alternar entre views.
+Para construir o back-end, Express,  para criar o servidor e as rotas. A aplicação cria sessões para ser acessada. Na página inicial pode ser criado um usuário. Utilizei o módulo Passport para fazer autenticação, utilizando estratégia local. para persistir eventos e usuários, mysql.
 
 ![inicio](https://i.imgur.com/Nb9KyBw.png)
 
