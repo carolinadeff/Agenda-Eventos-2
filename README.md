@@ -9,10 +9,10 @@ Essa aplicação foi um projetinho meu, para exercitar conceitos e ferramentas a
 No back-end usei o Express para criar o servidor e as rotas e o passport junto para fazer autenticação. para persistir eventos e usuários, mysql.
 A entrada da aplicação tem a opção de criar o usuario ou fazer login.
 
-![inicio](./inicial.png)
+![inicio](https://i.imgur.com/Nb9KyBw.png)
 
 Ao realizar login o usuário é direciopnado à agenda, onde cria, edita e visualiza os eventos, com filtros de categoria e de visualização de eventos passados.
 
-![agenda](./agenda.png)
-![agenda](./agenda2.png)
+![agenda](https://i.imgur.com/B1yAPOm.png)
+![agenda](https://i.imgur.com/aQPNVSV.png)
 
